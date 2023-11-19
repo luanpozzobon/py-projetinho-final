@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RF</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <h2>Random Forest</h2>
+    <form method="post" action="{{ url_for('classify_rf') }}" class="form-group">
+        <div class="form row">
+            <label for="n_estimators">N Estimators</label>
+            <input type="number" name="n_estimators" id="n_estimators" class="form-control">
+        </div>
+        <br>
+        <div class="form row">
+            <label for="criterion">Criterion</label>
+            <select name="criterion" id="criterion" class="form-control">
+                <option value="gini">Gini</option>
+                <option value="entropy">Entropy</option>
+                <option value="log_loss">Log Loss</option>
+            </select>
+        </div>
+        <br>
+        <div class="form row">
+            <label for="max_depth">Max Depth</label>
+            <input type="number" name="max_depth" id="max_depth" class="form-control">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Classificar</button>
+    </form>
+</body>
+</html>

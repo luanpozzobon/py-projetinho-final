@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Support Vector Classification</h2>
+    <form method="post" action="{{ url_for('classify_svc') }}" class="form-group">
+        <div class="form row">
+            <label for="c">C</label>
+            <input type="number" step="0.1" name="c" id="c" class="form-control">
+        </div>
+        <br>
+        <div class="form row">
+            <label for="kernel">Kernel</label>
+            <select name="kernel" id="kernel" class="form-control">
+                <option value="rbf">Rbf</option>
+                <option value="linear">Linear</option>
+                <option value="poly">Poly</option>
+                <option value="sigmoid">Sigmoid</option>
+                <option value="precomputed">Precomputed</option>
+            </select>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Classificar</button>
+    </form>
+</body>

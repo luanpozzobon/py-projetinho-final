@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="info">
+        <h2>{{ classifier }}</h2>
+        <p>Acurácia: {{ accuracy }}</p>
+        <p>F1-Score {{ f1_score }}</p>
+    </div>
+    <div class="image">
+        {{ conf_matrix | safe }}
+    </div>
+</body>
+</html>

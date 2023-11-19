@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KNN</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        label,
+        legend {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        legend {
+            text-decoration: none;
+            padding: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>K Nearest Neighbors</h2>
+    <form method="post" action="{{ url_for('classify_knn') }}" class="form-group">
+        <div class="form row">
+            <label for="n_neighbors">N Neighbors</label>
+            <input type="number" name="n_neighbors" id="n_neighbors" class="form-control">
+        </div>
+        <br>
+        <div class="form row">
+            <legend class="col-form-label col-sm-2 pt-0">Weights</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input type="radio" id="uniform" name="weights" value="uniform" class="form-check-input">
+                    <label for="uniform" class="form-check-label">Uniform</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="distance" name="weights" value="distance" class="form-check-input">
+                    <label for="distance" class="form-check-label">Distance</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form row">
+            <label for="algorithm">Algorithm</label>
+            <select name="algorithm" id="algorithm" class="form-control">
+                <option value="auto">Auto</option>
+                <option value="ball_tree">Ball Tree</option>
+                <option value="kd_tree">KD Tree</option>
+                <option value="brute">Brute Force</option>
+            </select>
+        </div>
+        <br>
+        <div class="form row">
+            <label for="leaf_size">Leaf Size</label>
+            <input type="number" name="leaf_size" id="leaf_size" class="form-control">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Classificar</button>
+    </form>
+</body>
+</html>

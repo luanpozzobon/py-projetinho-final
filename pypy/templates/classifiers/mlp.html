@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MLP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        label,
+        legend {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        legend {
+            text-decoration: none;
+            padding: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Multi Layer Perceptron</h2>
+    <form method="post" action="{{ url_for('classify_mlp') }}" class="form-group">
+        <div class="form row">
+            <label for="hidden_layer_sizes">Hidden Layer Sizes</label>
+            <input type="number" name="hidden_layer_sizes" id="hidden_layer_sizes" class="form-control">
+        </div>
+        <br>
+        <div class="form row">
+            <label for="activation">Activation</label>
+            <select name="activation" id="activation" class="form-control">
+                <option value="relu">ReLU</option>
+                <option value="identity">Identity</option>
+                <option value="logistic">Logistic</option>
+                <option value="tanh">Tanh</option>
+            </select>
+        </div>
+        <br>
+        <div class="form row">
+            <legend class="col-form-label col-sm-2 pt-0">Learning Rate</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input type="radio" id="constant" name="learning_rate" value="constant" class="form-check-input">
+                    <label for="constant" class="form-check-label">Constant</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="learning_rate" id="invscaling" value="invscaling" class="form-check-input">
+                    <label for="invscaling" class="form-check-label">Invscaling</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="learning_rate" id="adaptive" value="adaptive" class="form-check-input">
+                    <label for="adaptive" class="form-check-label">Adaptive</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form row">
+            <label for="max_iter">Max Iter</label>
+            <input type="number" name="max_iter" id="max_iter" class="form-control">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Classificar</button>
+    </form>
+</body>
+</html>

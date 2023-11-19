@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Learning</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        form {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Machine Learning</h1>
+    <form method="post" action="{{ url_for('classifier_chooser') }}" class="form-group">
+        <label for="classifiers">Escolha o Classificador: </label>
+        <select name="classifiers" id="classifiers" class="form-control">
+            <option value="knn">KNN</option>
+            <option value="svc">SVC</option>
+            <option value="mlp">MLP</option>
+            <option value="dt">DT</option>
+            <option value="rf">RF</option>
+        </select>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Selecionar</button>
+    </form>
+    <div>
+        {{ parameter_fields | safe }}
+    </div>
+    <div>
+        {{ results | safe }}
+    </div>
+</body>
+</html>
